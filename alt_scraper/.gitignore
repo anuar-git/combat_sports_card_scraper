@@ -1,0 +1,13 @@
+.env
+data/raw/
+data/runs/
+data/seen_hashes.json
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/

@@ -1,0 +1,25 @@
+# HTTP & scraping
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+selenium==4.18.1
+webdriver-manager==4.0.1
+
+# Schema validation
+pydantic==2.6.1
+pydantic-settings==2.2.1
+
+# Data handling
+python-dateutil==2.9.0
+tenacity==8.2.3
+
+# Storage & hashing
+python-dotenv==1.0.1
+
+# Logging
+structlog==24.1.0
+
+# Testing
+pytest==8.0.2
+pytest-mock==3.12.0
+responses==0.25.0
