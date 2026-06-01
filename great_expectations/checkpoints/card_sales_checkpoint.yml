@@ -1,0 +1,25 @@
+name: card_sales_checkpoint
+config_version: 1.0
+class_name: Checkpoint
+module_name: great_expectations.checkpoint
+run_name_template: "%Y%m%d-%H%M%S-card-sales-validation"
+
+# Batch request is injected at runtime by run_checkpoint.py so that
+# the pandas DataFrame from data/processed/enriched can be passed directly.
+# The expectation_suite and action_list apply to all validations.
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: store_evaluation_params
+    action:
+      class_name: StoreEvaluationParametersAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction
+      site_names: []
+
+evaluation_parameters: {}
+runtime_configuration: {}
+validations: []
+profilers: []

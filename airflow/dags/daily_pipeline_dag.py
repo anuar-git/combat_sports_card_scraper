@@ -240,6 +240,12 @@ with DAG(
         trigger_rule=TriggerRule.ALL_DONE,
     )
 
+    run_ge_checkpoint = BashOperator(
+        task_id="run_ge_checkpoint",
+        bash_command="cd /opt/airflow && python great_expectations/run_checkpoint.py",
+        trigger_rule=TriggerRule.ALL_DONE,
+    )
+
     update_metrics = PythonOperator(
         task_id="update_pipeline_metrics",
         python_callable=_update_metrics,
@@ -262,6 +268,7 @@ with DAG(
         >> dbt_run
         >> dbt_test
         >> dbt_source_freshness
+        >> run_ge_checkpoint
         >> update_metrics
         >> notify_success
     )

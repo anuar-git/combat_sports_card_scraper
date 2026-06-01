@@ -1,0 +1,104 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "fct_card_sales_suite",
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.18.12",
+    "notes": "Runs on data/processed/enriched parquet — the Spark-enriched layer before BigQuery. sale_type is UPPERCASED by normalise_prices.py; record_hash is a SHA-256 hex string."
+  },
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 100,
+        "max_value": null
+      },
+      "meta": {
+        "notes": "Alert if the enriched dataset drops below 100 rows — indicates a broken scrape or ingest."
+      }
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "listing_id"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "sale_price_usd"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "sale_date"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "source"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "sale_type"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {"column": "record_hash"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "listing_id"},
+      "meta": {"notes": "Proxy for sale_id — every row must have a listing identifier."}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "sale_price_usd"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "sale_date"},
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "sale_price_usd",
+        "min_value": 0.01,
+        "max_value": 999999
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "source",
+        "value_set": ["ebay", "pwcc", "goldin"]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "sale_type",
+        "value_set": ["AUCTION", "BUY_IT_NOW", "UNKNOWN"]
+      },
+      "meta": {"notes": "normalise_prices.py uppercases sale_type; UNKNOWN is the fallback for unrecognised values."}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "record_hash",
+        "regex": "^[a-f0-9]{64}$"
+      },
+      "meta": {"notes": "record_hash is a SHA-256 hex digest — 64 lowercase hex characters."}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {"column": "record_hash"},
+      "meta": {"notes": "Deduplication in ingest_raw.py should eliminate duplicate hashes before enriched is written."}
+    }
+  ]
+}

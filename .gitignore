@@ -11,3 +11,8 @@ venv/
 *.egg-info/
 dist/
 build/
+
+# Great Expectations generated artifacts
+great_expectations/uncommitted/
+great_expectations/.ge_store_backend_id
+gx/
