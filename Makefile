@@ -1,5 +1,6 @@
 .PHONY: spark-ingest spark-normalise spark-enrich spark-benchmarks spark-all \
-        dbt-run dbt-test dbt-freshness dbt-all test full-run
+        dbt-run dbt-test dbt-freshness dbt-all test full-run \
+        airflow-up airflow-down api dashboard
 
 spark-ingest:
 	python -m spark.jobs.ingest_raw
@@ -30,3 +31,16 @@ test:
 	pytest tests/ -v
 
 full-run: spark-all dbt-all
+
+# Phase 3: Monitoring & Orchestration
+airflow-up:
+	docker compose up -d
+
+airflow-down:
+	docker compose down
+
+api:
+	uvicorn monitoring.api.main:app --reload --port 8000
+
+dashboard:
+	streamlit run monitoring/dashboard/app.py --server.port 8501

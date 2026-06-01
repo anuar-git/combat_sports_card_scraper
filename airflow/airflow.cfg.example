@@ -1,0 +1,38 @@
+# Key Airflow config values to set when running outside Docker.
+# Copy relevant sections into your airflow.cfg or set as env vars (AIRFLOW__SECTION__KEY).
+
+[core]
+executor = LocalExecutor
+dags_are_paused_at_creation = True
+load_examples = False
+
+[database]
+sql_alchemy_conn = postgresql+psycopg2://airflow:airflow@localhost/airflow
+
+[api]
+auth_backends = airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
+
+[scheduler]
+enable_health_check = True
+
+[smtp]
+# Required for email alerts via send_email_alert()
+smtp_host = smtp.gmail.com
+smtp_starttls = True
+smtp_ssl = False
+smtp_user = anuar.hage@gmail.com
+smtp_password = <app-password>
+smtp_port = 587
+smtp_mail_from = anuar.hage@gmail.com
+
+# Airflow Variables to set via Admin > Variables (or `airflow variables set`)
+# raw_data_dir          = /opt/airflow/data/raw
+# processed_data_dir    = /opt/airflow/data/processed
+# ebay_max_pages        = 10
+# pwcc_max_pages        = 5
+# slack_webhook_url     = https://hooks.slack.com/services/...
+# alert_email           = anuar.hage@gmail.com
+
+# Airflow Connections to set via Admin > Connections
+# google_cloud_default  = Google Cloud service account JSON keyfile
+# postgres_alt          = Connection to BigQuery or Postgres instance

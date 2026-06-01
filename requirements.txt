@@ -35,3 +35,21 @@ pytest==8.0.2
 pytest-mock==3.12.0
 pytest-spark==0.6.0
 responses==0.25.0
+
+# Phase 3: Monitoring & Orchestration
+# Airflow — install separately to avoid resolver conflicts:
+#   pip install "apache-airflow==2.8.2" --constraint \
+#     "https://raw.githubusercontent.com/apache/airflow/constraints-2.8.2/constraints-3.11.txt"
+apache-airflow==2.8.2
+
+# API
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+
+# Dashboard
+streamlit==1.32.0
+plotly==5.19.0
+pandas==2.2.1
+
+# Alerting
+slack-sdk==3.27.1
