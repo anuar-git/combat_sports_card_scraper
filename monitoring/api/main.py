@@ -6,7 +6,7 @@ Run with:
 
 from fastapi import FastAPI
 
-from monitoring.api.routes import health, metrics
+from monitoring.api.routes import ebay_notifications, health, metrics
 
 app = FastAPI(
     title="Alt Cards Pipeline Monitor",
@@ -16,3 +16,4 @@ app = FastAPI(
 
 app.include_router(health.router, prefix="/pipeline", tags=["health"])
 app.include_router(metrics.router, prefix="/metrics", tags=["metrics"])
+app.include_router(ebay_notifications.router, prefix="/ebay", tags=["ebay"])
