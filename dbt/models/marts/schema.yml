@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: fct_card_sales
+    description: "One row per completed card sale, joined with fighter, card, and grade dimensions."
+    columns:
+      - name: sale_id
+        tests:
+          - unique
+          - not_null
+      - name: sale_price_usd
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+      - name: sale_date
+        tests:
+          - not_null
+      - name: source
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ebay', 'pwcc', 'goldin']
+
+  - name: fct_price_benchmarks
+    description: "Rolling VWAP and volume metrics per fighter/grade/date."
+    columns:
+      - name: fighter_id
+        tests:
+          - not_null
+      - name: grade_id
+        tests:
+          - not_null
+      - name: benchmark_date
+        tests:
+          - not_null
+
+  - name: dim_fighter
+    description: "Canonical fighter dimension including aliases and sport classification."
+    columns:
+      - name: fighter_id
+        tests:
+          - unique
+          - not_null
+      - name: fighter_name_canonical
+        tests:
+          - not_null
+
+  - name: dim_card
+    description: "Unique card (set + number) dimension with rookie flag."
+    columns:
+      - name: card_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_grade
+    description: "Static grade dimension covering PSA, BGS, SGC, and raw cards."
+    columns:
+      - name: grade_id
+        tests:
+          - unique
+          - not_null
+      - name: grader
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PSA', 'BGS', 'SGC', 'CGC', 'Raw']

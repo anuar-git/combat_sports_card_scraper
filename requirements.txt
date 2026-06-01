@@ -19,7 +19,19 @@ python-dotenv==1.0.1
 # Logging
 structlog==24.1.0
 
+# PySpark
+pyspark==3.5.1
+
+# dbt
+dbt-core==1.7.10
+dbt-bigquery==1.7.7
+
+# GCP
+google-cloud-bigquery==3.17.2
+google-cloud-storage==2.16.0
+
 # Testing
 pytest==8.0.2
 pytest-mock==3.12.0
+pytest-spark==0.6.0
 responses==0.25.0

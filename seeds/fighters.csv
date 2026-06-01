@@ -1,0 +1,62 @@
+fighter_name_canonical,fighter_name_alias,sport,nationality,promotion,active,debut_year
+Conor McGregor,conor mcgregor,MMA,Irish,UFC,false,2008
+Conor McGregor,mcgregor,MMA,Irish,UFC,false,2008
+Conor McGregor,the notorious,MMA,Irish,UFC,false,2008
+Khabib Nurmagomedov,khabib nurmagomedov,MMA,Russian,UFC,false,2008
+Khabib Nurmagomedov,khabib,MMA,Russian,UFC,false,2008
+Jon Jones,jon jones,MMA,American,UFC,true,2008
+Jon Jones,bones jones,MMA,American,UFC,true,2008
+Israel Adesanya,israel adesanya,MMA,Nigerian-New Zealander,UFC,true,2012
+Israel Adesanya,the last stylebender,MMA,Nigerian-New Zealander,UFC,true,2012
+Israel Adesanya,adesanya,MMA,Nigerian-New Zealander,UFC,true,2012
+Francis Ngannou,francis ngannou,MMA,Cameroonian,UFC,false,2011
+Francis Ngannou,ngannou,MMA,Cameroonian,UFC,false,2011
+Alexander Volkanovski,alexander volkanovski,MMA,Australian,UFC,true,2012
+Alexander Volkanovski,volkanovski,MMA,Australian,UFC,true,2012
+Charles Oliveira,charles oliveira,MMA,Brazilian,UFC,true,2010
+Charles Oliveira,do bronx,MMA,Brazilian,UFC,true,2010
+Leon Edwards,leon edwards,MMA,British,UFC,true,2011
+Leon Edwards,rocky edwards,MMA,British,UFC,true,2011
+Kamaru Usman,kamaru usman,MMA,Nigerian-American,UFC,true,2012
+Kamaru Usman,the nigerian nightmare,MMA,Nigerian-American,UFC,true,2012
+Jorge Masvidal,jorge masvidal,MMA,American,UFC,true,2003
+Jorge Masvidal,gamebred,MMA,American,UFC,true,2003
+Dustin Poirier,dustin poirier,MMA,American,UFC,true,2009
+Dustin Poirier,the diamond poirier,MMA,American,UFC,true,2009
+Max Holloway,max holloway,MMA,American,UFC,true,2012
+Max Holloway,blessed holloway,MMA,American,UFC,true,2012
+Nate Diaz,nate diaz,MMA,American,UFC,true,2004
+Nick Diaz,nick diaz,MMA,American,Strikeforce,false,2001
+Amanda Nunes,amanda nunes,MMA,Brazilian,UFC,true,2008
+Amanda Nunes,the lioness,MMA,Brazilian,UFC,true,2008
+Valentina Shevchenko,valentina shevchenko,MMA,Kyrgyzstani,UFC,true,2003
+Valentina Shevchenko,bullet shevchenko,MMA,Kyrgyzstani,UFC,true,2003
+Rose Namajunas,rose namajunas,MMA,American,UFC,true,2013
+Rose Namajunas,thug rose,MMA,American,UFC,true,2013
+Sean O'Malley,sean o'malley,MMA,American,UFC,true,2016
+Sean O'Malley,suga sean,MMA,American,UFC,true,2016
+Paddy Pimblett,paddy pimblett,MMA,British,UFC,true,2012
+Paddy Pimblett,the baddy,MMA,British,UFC,true,2012
+Paulo Costa,paulo costa,MMA,Brazilian,UFC,true,2012
+Paulo Costa,borrachinha,MMA,Brazilian,UFC,true,2012
+Robert Whittaker,robert whittaker,MMA,Australian,UFC,true,2009
+Robert Whittaker,the reaper whittaker,MMA,Australian,UFC,true,2009
+Stipe Miocic,stipe miocic,MMA,American,UFC,true,2011
+Daniel Cormier,daniel cormier,MMA,American,UFC,false,2009
+Daniel Cormier,dc cormier,MMA,American,UFC,false,2009
+Demetrious Johnson,demetrious johnson,MMA,American,ONE FC,true,2007
+Demetrious Johnson,mighty mouse,MMA,American,ONE FC,true,2007
+Adriano Moraes,adriano moraes,MMA,Brazilian,ONE FC,true,2009
+Ryan Bader,ryan bader,MMA,American,Bellator,true,2006
+Patricio Freire,patricio freire,MMA,Brazilian,Bellator,true,2004
+Patricio Freire,patricio pitbull,MMA,Brazilian,Bellator,true,2004
+Canelo Alvarez,canelo alvarez,BOXING,Mexican,Boxing,true,2005
+Canelo Alvarez,canelo,BOXING,Mexican,Boxing,true,2005
+Ryan Garcia,ryan garcia,BOXING,American,Boxing,true,2016
+Ryan Garcia,king ry,BOXING,American,Boxing,true,2016
+Gervonta Davis,gervonta davis,BOXING,American,Boxing,true,2013
+Gervonta Davis,tank davis,BOXING,American,Boxing,true,2013
+Terence Crawford,terence crawford,BOXING,American,Boxing,true,2008
+Terence Crawford,bud crawford,BOXING,American,Boxing,true,2008
+Errol Spence Jr,errol spence jr,BOXING,American,Boxing,true,2012
+Errol Spence Jr,the truth spence,BOXING,American,Boxing,true,2012

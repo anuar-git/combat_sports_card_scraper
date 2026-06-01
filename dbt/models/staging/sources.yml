@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('GCP_PROJECT_ID') }}"
+    schema: alt_cards_raw
+    tables:
+      - name: ebay_sales
+        loaded_at_field: ingested_at
+        freshness:
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 24, period: hour}
+      - name: pwcc_sales
+        loaded_at_field: ingested_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 48, period: hour}
