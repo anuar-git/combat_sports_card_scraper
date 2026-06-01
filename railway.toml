@@ -1,8 +1,4 @@
-[build]
-buildCommand = "pip install -r requirements-api.txt"
-
 [deploy]
-startCommand = "uvicorn monitoring.api.main:app --host 0.0.0.0 --port $PORT"
 healthcheckPath = "/pipeline/health"
 healthcheckTimeout = 10
 restartPolicyType = "on_failure"
