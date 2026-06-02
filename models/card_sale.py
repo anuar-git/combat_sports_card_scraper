@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, HttpUrl, field_validator, model_validator
 
 class RawCardSale(BaseModel):
     listing_id: str
-    source: Literal["ebay", "pwcc", "goldin"]
+    source: Literal["ebay", "pwcc", "goldin", "myslabs"]
     scraped_at: datetime
     sale_price_usd: Decimal
     sale_date: date

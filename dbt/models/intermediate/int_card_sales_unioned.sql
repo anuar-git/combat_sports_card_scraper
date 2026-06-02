@@ -6,10 +6,16 @@ pwcc AS (
     SELECT * FROM {{ ref('stg_pwcc_sales') }}
 ),
 
+myslabs AS (
+    SELECT * FROM {{ ref('stg_myslabs_sales') }}
+),
+
 unioned AS (
     SELECT * FROM ebay
     UNION ALL
     SELECT * FROM pwcc
+    UNION ALL
+    SELECT * FROM myslabs
 )
 
 SELECT

@@ -99,7 +99,7 @@ def _run_scraper(scraper, queries: list[str], max_pages: int, dry_run: bool, out
 
 def main():
     parser = argparse.ArgumentParser(description="Combat sports card scraper")
-    parser.add_argument("--source", default="all", choices=["ebay", "pwcc", "all"])
+    parser.add_argument("--source", default="all", choices=["ebay", "pwcc", "myslabs", "all"])
     parser.add_argument("--query", default=None, help="Override default queries")
     parser.add_argument("--max-pages", type=int, default=10)
     parser.add_argument("--dry-run", action="store_true")
@@ -113,10 +113,12 @@ def main():
 
     from scrapers.ebay import EbayScraper, EBAY_QUERIES
     from scrapers.pwcc import PwccScraper, PWCC_QUERIES
+    from scrapers.myslabs import MySlabsScraper, MYSLABS_QUERIES
 
     scraper_configs = {
         "ebay": (EbayScraper, EBAY_QUERIES),
         "pwcc": (PwccScraper, PWCC_QUERIES),
+        "myslabs": (MySlabsScraper, MYSLABS_QUERIES),
     }
 
     sources_to_run = list(scraper_configs.keys()) if args.source == "all" else [args.source]
