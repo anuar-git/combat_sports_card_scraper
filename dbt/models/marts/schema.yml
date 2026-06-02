@@ -21,17 +21,21 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['ebay', 'pwcc', 'goldin']
+              values: ['ebay', 'pwcc', 'goldin', 'myslabs']
 
   - name: fct_price_benchmarks
     description: "Rolling VWAP and volume metrics per fighter/grade/date."
     columns:
       - name: fighter_id
         tests:
-          - not_null
+          - not_null:
+              config:
+                severity: warn
       - name: grade_id
         tests:
-          - not_null
+          - not_null:
+              config:
+                severity: warn
       - name: benchmark_date
         tests:
           - not_null

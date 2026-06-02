@@ -1,5 +1,7 @@
 CLAUDE.md
 .env
+service-account.json
+dbt/profiles.yml
 data/raw/
 data/runs/
 data/seen_hashes.json

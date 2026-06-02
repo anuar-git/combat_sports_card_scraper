@@ -15,14 +15,18 @@ def get_spark_session(app_name: str) -> SparkSession:
     )
 
     gcs_bucket = os.getenv("GCS_TEMP_BUCKET")
+    credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+
     if gcs_bucket:
         builder = builder.config(
-            "spark.sql.extensions", "com.google.cloud.spark.bigquery"
+            "spark.jars.packages",
+            "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.36.1",
         )
+        if credentials_path:
+            builder = builder.config(
+                "spark.hadoop.google.cloud.auth.service.account.json.keyfile", credentials_path
+            )
 
     spark = builder.getOrCreate()
-
-    if gcs_bucket:
-        spark.conf.set("temporaryGcsBucket", gcs_bucket)
 
     return spark

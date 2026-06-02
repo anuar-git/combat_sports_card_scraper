@@ -1,4 +1,4 @@
-.PHONY: spark-ingest spark-normalise spark-enrich spark-benchmarks spark-all \
+.PHONY: spark-ingest spark-normalise spark-enrich spark-benchmarks spark-load-bq spark-all \
         dbt-run dbt-test dbt-freshness dbt-all test full-run \
         airflow-up airflow-down api dashboard
 
@@ -14,7 +14,10 @@ spark-enrich:
 spark-benchmarks:
 	python -m spark.jobs.compute_benchmarks
 
-spark-all: spark-ingest spark-normalise spark-enrich spark-benchmarks
+spark-load-bq:
+	python -m spark.jobs.load_to_bigquery
+
+spark-all: spark-ingest spark-normalise spark-enrich spark-benchmarks spark-load-bq
 
 dbt-run:
 	cd dbt && dbt run --profiles-dir .

@@ -8,7 +8,7 @@ WITH cards AS (
         card_set,
         card_number,
         fighter_id
-    FROM {{ ref('fct_card_sales') }}
+    FROM {{ ref('int_fighter_name_resolved') }}
     WHERE card_year IS NOT NULL
       AND card_set IS NOT NULL
       AND card_number IS NOT NULL
